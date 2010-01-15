@@ -1,5 +1,6 @@
 *.o
 *.aligns
+*.blast
 *.blocks
 *.gff
 *.mcl
