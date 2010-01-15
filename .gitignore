@@ -1,0 +1,7 @@
+*.o
+*.aligns
+*.blocks
+*.gff
+*.mcl
+*.blocks
+!at_at.*

@@ -25,7 +25,7 @@ static void init_opt()
     // match bonus, final score=MATCH_SCORE+GAPS*GAP_SCORE
     MATCH_SCORE = 50;
     // the number of genes required to call synteny, sometimes more
-    MATCH_SIZE = 5;
+    MATCH_SIZE = 6;
     // gap extension penalty
     GAP_SCORE = -3;
     // alignment significance
