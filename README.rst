@@ -1,7 +1,7 @@
 Welcome to MCscan's documentation!
 ==================================
 
-The MCscan download page can be accessed `here <http://chibba.agtec.uga.edu/duplication/mcscan>`_. 
+The MCscan download page can be accessed `here <http://chibba.agtec.uga.edu/duplication/mcscan>`__. 
 
 
 Usage
@@ -25,7 +25,7 @@ Simply put ``mcscan.tar.gz`` in any directory::
 
 the compiled codes are within the same directory as the source.
 
-Then put copy of MCL executable within the same folder as MCscan (MCL program downloadable `here <http://micans.org/mcl/>`_). 
+Then put copy of MCL executable within the same folder as MCscan (MCL program downloadable `here <http://micans.org/mcl/>`__). 
 
 
 Inputs and outputs
