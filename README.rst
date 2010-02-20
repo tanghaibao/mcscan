@@ -130,11 +130,7 @@ Contact
 ==================
 Any questions, problems, bugs are welcome and should be dumped to 
 
-|icon| Haibao Tang : bao at uga dot edu
-
-.. |icon| image:: ../../images/icons/buddy.gif
-    :height: 25
-    :width: 25
+Haibao Tang : bao at uga dot edu
 
 `Plant Genome Mapping Laboratory <http://www.plantgenome.uga.edu>`_, University of Georgia
 

@@ -17,8 +17,8 @@ $(PROG): $(OBJS)
 clean:
 	rm -f $(PROG)
 	rm -f *.o
-	rm -f *.aligns
-	rm -f *.blocks
+	rm -f data/*.aligns
+	rm -f data/*.blocks
 
 test:
 	$(MAKE)
