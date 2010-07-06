@@ -1,10 +1,11 @@
 VER=0.8
 PROG=mcscan
-DIST=$(PROG)$(VER)
-SRCS=struct.cc mcscan.cc read_data.cc out_utils.cc dagchainer.cc pog.cc permutation.cc
+DIST=$(PROG)-$(VER)
+SRCS=basic.cc mcscan.cc read_data.cc out_utils.cc dagchainer.cc pog.cc permutation.cc
 OBJS=$(SRCS:.cc=.o) 
 CC=g++
 CFLAGS=-O3 -Wall -ansi -pedantic-errors -I. -DVER=$(VER)
+CFLAGS+=-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
 all: $(PROG)
 
@@ -20,10 +21,10 @@ clean:
 	rm -f data/*.aligns
 	rm -f data/*.blocks
 
-test:
-	$(MAKE)
-	python mcscan.py at_vv
+test: $(PROG)
+	run.sh
 
 dist:
 	$(MAKE) clean
-	cd .. && tar czf $(DIST).tar.gz $(DIST)/
+	cd .. && tar czf $(DIST).tar.gz $(PROG)/
+

@@ -1,5 +1,5 @@
-#ifndef __STRUCT_H
-#define __STRUCT_H
+#ifndef __BASIC_H
+#define __BASIC_H
 
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
@@ -13,7 +13,7 @@
 #include <cmath>
 #include <ctime>
 #include <sys/time.h>
-#include <getopt.h>
+#include <argp.h>
 #include <string>
 #include <vector>
 #include <list>

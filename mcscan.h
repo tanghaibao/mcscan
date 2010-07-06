@@ -1,7 +1,7 @@
 #ifndef __MCSCAN_H
 #define __MCSCAN_H
 
-#include "struct.h"
+#include "basic.h"
 
 // read_data
 extern void read_blast(const char *prefix_fn, bool gff_flag=true);
@@ -15,6 +15,7 @@ extern void read_cfg();
 extern void POG_main(FILE *fw);
 
 // out_utils
+extern void print_params(FILE *fw);
 extern void print_align(FILE* fw);
 extern void print_align_mcl(FILE *fw);
 

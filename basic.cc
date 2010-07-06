@@ -2,7 +2,7 @@
  * UCSC Jim Kent's library
  */
 
-#include "struct.h"
+#include "basic.h"
 
 void progress(const char *format, ...)
 /* Print progress message */

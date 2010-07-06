@@ -1,7 +1,7 @@
 #ifndef __OUT_UTILS_H
 #define __OUT_UTILS_H
 
-#include "struct.h"
+#include "basic.h"
 
 /* pairwise blocks */
 void print_align(FILE *fw);

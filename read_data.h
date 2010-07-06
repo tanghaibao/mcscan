@@ -1,7 +1,7 @@
 #ifndef __READ_DATA_H
 #define __READ_DATA_H
 
-#include "struct.h"
+#include "basic.h"
 
 void read_blast(const string &prefix_fn);
 void read_mcl(const string &prefix_fn);

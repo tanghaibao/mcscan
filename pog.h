@@ -1,7 +1,7 @@
 #ifndef __POG_H
 #define __POG_H
 
-#include "struct.h"
+#include "basic.h"
 
 void POG_main(FILE *fw);
 

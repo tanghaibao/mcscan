@@ -1,7 +1,7 @@
 #ifndef __DAGCHAINER_H
 #define __DAGCHAINER_H
 
-#include  "struct.h"
+#include  "basic.h"
 
 void dag_main(vector<Score_t> &score, const string &mol_pair);
 
