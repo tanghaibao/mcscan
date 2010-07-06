@@ -39,13 +39,15 @@ using namespace std;
 #define MIN(a, b) ((a)<(b)?(a):(b))
 #define LABEL_LEN 64
 
+#define all(c) (c).begin(),(c).end() 
+#define tr(c,i) for(i=(c).begin();i!=(c).end();i++)
+
 /* Compatibility of __attribute__ with non-GNU */
 #ifndef __GNUC__
 #define __attribute__(x)
 #endif
 
 /***** Data structures *****/
-// mcscan
 struct Blast_record
 {
     string gene1, gene2;
@@ -179,6 +181,8 @@ extern int EXTENSION_DIST;
 // alignment significance score
 extern int CUTOFF_SCORE;
 extern bool IN_SYNTENY;
+// use base pair distance rather than gene ranks
+extern bool USE_BP;
 
 // direction in the 2d dynamic matrix
 enum { DIAG, UP, LEFT, DEL };

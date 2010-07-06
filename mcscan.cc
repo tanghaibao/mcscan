@@ -38,6 +38,7 @@ static struct argp_option options[] =
      "PIVOT is the reference genome, make it two letter prefix in"\
      "your .bed file, everything else will be aligned to the reference" },
     {"unit_dist", 'u', "UNIT_DIST", 0, "average intergenic distance" },
+    {0, 'A', 0, 0, "use base pair dist instead of gene ranks" },
     {0, 'a', 0, 0, "only builds the pairwise blocks (.aligns file)" },
     {0, 'b', 0, 0, "limit within genome synteny (e.g. Vv-Vv) mapping" },
     { 0 }
@@ -75,6 +76,9 @@ parse_opt (int key, char *arg, struct argp_state *state)
     case 'b':
         IN_SYNTENY = true;
         break;
+    case 'A':
+        USE_BP = true;
+        break;
 
     case ARGP_KEY_ARG:
         if (state->arg_num >= nargs)
@@ -105,26 +109,37 @@ static int read_opt (int argc, char **argv)
 {
     /* Default values. */
     // match bonus, final score=MATCH_SCORE+GAPS*GAP_SCORE
-    MATCH_SCORE = 50;
+    MATCH_SCORE = 40;
     // the number of genes required to call synteny, sometimes more
-    MATCH_SIZE = 6;
+    MATCH_SIZE = 5;
     // gap extension penalty
-    GAP_SCORE = -3;
+    GAP_SCORE = -2;
     // alignment significance
     E_VALUE = 1e-5;
     // align with a reference genome (occurs as first column in .blocks file)
     PIVOT = "ALL";
-    // this variable is dependent on gene density
-    UNIT_DIST = 10000;
+    UNIT_DIST = 0;
 
     IS_PAIRWISE = false;
     BUILD_MCL = false;
     IN_SYNTENY = false;
+    USE_BP = false;
 
     /* Parse our arguments; every option seen by parse_opt will
       be reflected in arguments. */
     argp_parse (&argp, argc, argv, 0, 0, 0);
     strcpy(prefix_fn, args[0]);
+
+
+    // default unit values for the distance calculation
+    if (USE_BP) 
+    {
+        if (UNIT_DIST==0) UNIT_DIST = 10000;
+    }
+    else
+    {
+        if (UNIT_DIST==0) UNIT_DIST = 2;
+    }
 
     OVERLAP_WINDOW = MATCH_SCORE*UNIT_DIST/10;
     EXTENSION_DIST = MATCH_SCORE*UNIT_DIST/2;
@@ -145,7 +160,7 @@ int main(int argc, char *argv[])
     read_opt(argc, argv);
     print_params(stdout);
 
-    read_gff(prefix_fn);
+    read_bed(prefix_fn);
     if (!IS_PAIRWISE) read_mcl(prefix_fn);
     read_blast(prefix_fn);
 

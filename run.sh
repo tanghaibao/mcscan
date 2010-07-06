@@ -5,7 +5,8 @@ set -x
 WORK_FOLDER=data
 EXE_FOLDER=.
 PREFIX=${WORK_FOLDER}/at_at
-MCSCAN_PARAMS="-u 5000"
+#MCSCAN_PARAMS="-A -u 5000"
+MCSCAN_PARAMS=""
 
 # Filter redundant blast hits
 #./filter_blast.py ${PREFIX}.blast.m8 ${PREFIX}.blast

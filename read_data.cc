@@ -117,25 +117,39 @@ void read_mcl(const char *prefix_fn)
     fclose(fp);
 }
 
-void read_gff(const char *prefix_fn)
+void read_bed(const char *prefix_fn)
 {
     char fn[LABEL_LEN], gn[LABEL_LEN], mol[LABEL_LEN];
     int end5, end3;
     Gene_feat gf;
+    // default position for genes are based on gene ranks
+    vector<Gene_feat> bed;
 
-    sprintf(fn, "%s.gff", prefix_fn);
+    sprintf(fn, "%s.bed", prefix_fn);
     FILE *fp = mustOpen(fn, "r");
 
-    while (fscanf(fp, "%s%s%d%d",
-                  &mol[0], &gn[0], &end5, &end3) == 4)
+    while (fscanf(fp, "%s%d%d%s",
+                  &mol[0], &end5, &end3, &gn[0]) == 4)
     {
         gf.mol = string(mol);
         gf.name = string(gn);
         gf.mid = end5;
-        gene_map[gf.name] = gf;
+        bed.push_back(gf);
     }
 
     fclose(fp);
+    
+    // sort bed with respect to chromosome and position
+    sort(all(bed));
+
+    vector<Gene_feat>::iterator bi;
+    unsigned int i = 0;
+    tr(bed, bi) 
+    { 
+        if (! USE_BP) bi->mid = i++; 
+        gene_map[bi->name] = *bi;
+        //printf("%s\n", bi->name.c_str());
+    }
 }
 
 static void filter_matches_x ()

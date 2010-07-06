@@ -5,7 +5,7 @@
 
 void read_blast(const string &prefix_fn);
 void read_mcl(const string &prefix_fn);
-void read_gff(const string &prefix_fn, int gff_flag=1);
+void read_bed(const string &prefix_fn, int gff_flag=1);
 
 void feed_dag(const string &mol_pair);
 

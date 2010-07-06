@@ -6,7 +6,7 @@
 // read_data
 extern void read_blast(const char *prefix_fn, bool gff_flag=true);
 extern void read_mcl(const char *prefix_fn);
-extern void read_gff(const char *prefix_fn);
+extern void read_bed(const char *prefix_fn);
 extern void feed_pog();
 extern void feed_dag (const string &mol_pair);
 extern void read_cfg();
@@ -38,5 +38,6 @@ string PIVOT;
 int EXTENSION_DIST;
 int CUTOFF_SCORE;
 bool IN_SYNTENY;
+bool USE_BP;
 
 #endif
