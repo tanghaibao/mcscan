@@ -44,7 +44,7 @@ easily genenerated from a m8 blast output format::
 
 The first thing please ensure that for each gene pair, only one e-value is reported, the blast output normally would contain multiple HSPs, a convenience script is attached to filter all the redundant pairs::
 
-    $ python filter_blast.py xyz.blast.unfiltered > xyz.blast
+    $ python filter_blast.py xyz.blast.unfiltered xyz.blast
 
 The ``.bed`` file contains the following tab-delimited format (see `bed format <http://genome.ucsc.edu/FAQ/FAQformat.html#format1>`__):
 
@@ -56,7 +56,7 @@ Once you have everything ready, put them in the same folder. We need to generate
 
     $ more xyz.blast | mcl - --abc --abc-neg-log -abc-tf 'mul(0.4343), ceil(200)' -o xyz.mcl 
 
-Note that ``mcscan.py`` is just a wrapper script to call the ``mcl`` command. After the first time you run it (the ``mcl`` file has been generated). You can simply use::
+Some might encounter a problem exec the ``mcl`` command, in which case the ``mcl`` binary needs to be rebuilt from `here <http://micans.org/mcl/>`__. After the first time you run it (the ``mcl`` file has been generated). You can simply use::
 
     $ ./mcscan xyz
 
