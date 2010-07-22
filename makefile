@@ -26,5 +26,5 @@ test: $(PROG)
 
 dist:
 	$(MAKE) clean
-	cd .. && tar czf $(DIST).tar.gz $(PROG)/
+	git archive HEAD | gzip > ../$(DIST).tar.gz
 

@@ -35,7 +35,7 @@ static struct argp_option options[] =
     {"gap_score", 'g', "GAP_SCORE", 0, "gap penalty" },
     {"e_value", 'e', "E_VALUE", 0, "alignment significance" },
     {"pivot", 'p', "PIVOT", 0,
-     "PIVOT is the reference genome, make it two letter prefix in"\
+     "PIVOT is the reference genome, make it two letter prefix in "\
      "your .bed file, everything else will be aligned to the reference" },
     {"unit_dist", 'u', "UNIT_DIST", 0, "average intergenic distance" },
     {0, 'A', 0, 0, "use base pair dist instead of gene ranks" },
