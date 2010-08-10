@@ -33,6 +33,7 @@ static struct argp_option options[] =
     {"match_score", 'k', "MATCH_SCORE", 0,
         "final score=MATCH_SCORE+NUM_GAPS*GAP_SCORE" },
     {"gap_score", 'g', "GAP_SCORE", 0, "gap penalty" },
+    {"match_size", 's', "MATCH_SIZE", 0, "number of genes required to call synteny" },
     {"e_value", 'e', "E_VALUE", 0, "alignment significance" },
     {"pivot", 'p', "PIVOT", 0,
      "PIVOT is the reference genome, make it two letter prefix in "\

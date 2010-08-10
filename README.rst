@@ -82,6 +82,7 @@ The help screen::
       -p, --pivot=PIVOT          PIVOT is the reference genome, make it two letter
                                  prefix inyour .bed file, everything else will be
                                  aligned to the reference
+      -s, --match_size=MATCH_SIZE   number of genes required to call synteny
       -u, --unit_dist=UNIT_DIST  average intergenic distance
       -?, --help                 Give this help list
           --usage                Give a short usage message
