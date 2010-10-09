@@ -24,6 +24,9 @@ clean:
 test: $(PROG)
 	run.sh
 
+doc:
+	@rm -f Doxyfile && doxygen -g && doxygen Doxyfile
+
 dist:
 	$(MAKE) clean
 	git archive HEAD | gzip > ../$(DIST).tar.gz
