@@ -37,7 +37,7 @@ using namespace std;
 #define sameString(a, b) (strcmp((a), (b))==0)
 #define MAX(a, b) ((a)>(b)?(a):(b))
 #define MIN(a, b) ((a)<(b)?(a):(b))
-#define LABEL_LEN 64
+#define LABEL_LEN 256
 
 #define all(c) (c).begin(),(c).end() 
 #define tr(c,i) for(i=(c).begin();i!=(c).end();i++)
